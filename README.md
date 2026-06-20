@@ -1,6 +1,6 @@
 # Project Moonslide
 
-Project Moonslide is an Astronomy Club, IIT Kanpur mentorship project focused on detecting and characterizing lunar landslides using Chandrayaan-II imagery. The project combines planetary science, satellite image analysis, GIS tools, computer vision, and machine learning to identify landslide-prone regions on the Moon. :contentReference[oaicite:0]{index=0}
+Project Moonslide is an Astronomy Club, IIT Kanpur mentorship project focused on automated lunar landslide detection using Chandrayaan-2 imagery. The project combines computer vision, remote sensing, planetary science, and machine learning to identify landslide-prone regions on the lunar surface.
 
 ## Mentors
 - Mihir
@@ -18,15 +18,38 @@ Project Moonslide is an Astronomy Club, IIT Kanpur mentorship project focused on
 - Sayantan
 - Sheetal
 
-## Objectives
-- Detect lunar landslides from Chandrayaan-II imagery.
-- Study recent lunar geological activity through landslide analysis.
-- Apply image processing and machine learning techniques.
-- Analyze terrain properties using elevation data.
-- Build a preliminary catalogue of landslide-prone lunar regions. :contentReference[oaicite:1]{index=1}
+## Project Overview
 
-## Datasets
-The project primarily uses Chandrayaan-II data from the PRADAN portal:
+The project aims to build an automated landslide detection pipeline for Chandrayaan-2 satellite imagery by leveraging modern computer vision and machine learning techniques.
 
-- **OHRC (Optical High Resolution Camera)** — High-resolution lunar surface imagery.
-- **TMC-2 (Terrain Mapping Camera 2)** — Stereo imagery and Digital Elevation Models (DEMs) for terrain analysis. :contentReference[oaicite:2]{index=2}
+Key components include:
+
+- Unsupervised computer vision pipeline for automatic generation of labeled training data.
+- YOLOv8-based object detection framework for landslide identification.
+- Physics-guided feature extraction using slope, aspect, structure tensor anisotropy, and Chebyshev polynomial fitting.
+- Large-scale processing of Chandrayaan-2 imagery and elevation products.
+- GIS-assisted spatial analysis of detected landslide regions.
+
+## Technical Highlights
+
+- Built an unsupervised CV pipeline that auto-generates labeled training data for a YOLOv8 object detector, eliminating manual annotation bottlenecks.
+- Designed a 9-stage data pipeline:
+
+```text
+PDS4 Parsing
+    ↓
+Newton-Raphson Coordinate Solving
+    ↓
+Memory-Efficient Binary I/O
+    ↓
+Sobel / Gaussian Filtering
+    ↓
+Physics-Guided Feature Extraction
+    ↓
+Automatic Label Generation
+    ↓
+YOLO Dataset Creation
+    ↓
+Model Training
+    ↓
+Evaluation & Analysis
