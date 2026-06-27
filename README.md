@@ -1,6 +1,6 @@
 # Project Moonslide
 
-Project Moonslide is an Astronomy Club, IIT Kanpur mentorship project focused on automated lunar landslide detection using Chandrayaan-2 imagery. The project combines computer vision, remote sensing, planetary science, and machine learning to identify landslide-prone regions on the lunar surface.
+Project Moonslide is an Astronomy Club, IITK mentorship project focused on automated lunar landslide detection using Chandrayaan-2 imagery. The project combines computer vision, remote sensing, planetary science, and machine learning to identify landslide-prone regions on the lunar surface.
 
 ## Mentors
 - Mihir
